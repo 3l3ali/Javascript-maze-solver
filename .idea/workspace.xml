@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2163656-1989-449b-9a58-225a919b71e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Algorithm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Points.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Algorithm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maze.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +48,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-darwin-x64/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -78,49 +78,70 @@
       <workItem from="1582065967643" duration="17845000" />
       <workItem from="1583029905177" duration="2495000" />
       <workItem from="1583094179043" duration="9196000" />
-      <workItem from="1583178563912" duration="8450000" />
+      <workItem from="1583178563912" duration="22225000" />
     </task>
+    <task id="LOCAL-00001" summary="Added maze generator with simple bfs algorithm">
+      <created>1583543226177</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583543226177</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added maze generator with simple bfs algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added maze generator with simple bfs algorithm" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="662" height="170" key="GridCell.Tab.0.bottom" timestamp="1583533137956">
+    <state x="229" y="23" key="CommitChangelistDialog2" timestamp="1583543225825">
       <screen x="0" y="23" width="1366" height="680" />
     </state>
-    <state width="662" height="170" key="GridCell.Tab.0.bottom/0.23.1366.680@0.23.1366.680" timestamp="1583533137956" />
+    <state x="229" y="23" key="CommitChangelistDialog2/0.23.1366.680@0.23.1366.680" timestamp="1583543225825" />
+    <state width="842" height="170" key="GridCell.Tab.0.bottom" timestamp="1584032971836">
+      <screen x="0" y="23" width="1366" height="680" />
+    </state>
+    <state width="842" height="170" key="GridCell.Tab.0.bottom/0.23.1366.680@0.23.1366.680" timestamp="1584032971836" />
     <state width="1324" height="170" key="GridCell.Tab.0.bottom/0.23.1366.682@0.23.1366.682" timestamp="1583180751015" />
     <state width="1324" height="170" key="GridCell.Tab.0.bottom/0.23.1366.684@0.23.1366.684" timestamp="1582866159550" />
     <state width="1324" height="170" key="GridCell.Tab.0.bottom/0.23.1366.689@0.23.1366.689" timestamp="1582643197037" />
-    <state width="662" height="170" key="GridCell.Tab.0.center" timestamp="1583533137955">
+    <state width="842" height="170" key="GridCell.Tab.0.center" timestamp="1584032971833">
       <screen x="0" y="23" width="1366" height="680" />
     </state>
-    <state width="662" height="170" key="GridCell.Tab.0.center/0.23.1366.680@0.23.1366.680" timestamp="1583533137955" />
+    <state width="842" height="170" key="GridCell.Tab.0.center/0.23.1366.680@0.23.1366.680" timestamp="1584032971833" />
     <state width="1324" height="170" key="GridCell.Tab.0.center/0.23.1366.682@0.23.1366.682" timestamp="1583180751015" />
     <state width="1324" height="170" key="GridCell.Tab.0.center/0.23.1366.684@0.23.1366.684" timestamp="1582866159549" />
     <state width="1324" height="170" key="GridCell.Tab.0.center/0.23.1366.689@0.23.1366.689" timestamp="1582643197037" />
-    <state width="662" height="170" key="GridCell.Tab.0.left" timestamp="1583533137954">
+    <state width="842" height="170" key="GridCell.Tab.0.left" timestamp="1584032971833">
       <screen x="0" y="23" width="1366" height="680" />
     </state>
-    <state width="662" height="170" key="GridCell.Tab.0.left/0.23.1366.680@0.23.1366.680" timestamp="1583533137954" />
+    <state width="842" height="170" key="GridCell.Tab.0.left/0.23.1366.680@0.23.1366.680" timestamp="1584032971833" />
     <state width="1324" height="170" key="GridCell.Tab.0.left/0.23.1366.682@0.23.1366.682" timestamp="1583180751014" />
     <state width="1324" height="170" key="GridCell.Tab.0.left/0.23.1366.684@0.23.1366.684" timestamp="1582866159548" />
     <state width="1324" height="170" key="GridCell.Tab.0.left/0.23.1366.689@0.23.1366.689" timestamp="1582643197036" />
-    <state width="662" height="170" key="GridCell.Tab.0.right" timestamp="1583533137956">
+    <state width="842" height="170" key="GridCell.Tab.0.right" timestamp="1584032971835">
       <screen x="0" y="23" width="1366" height="680" />
     </state>
-    <state width="662" height="170" key="GridCell.Tab.0.right/0.23.1366.680@0.23.1366.680" timestamp="1583533137956" />
+    <state width="842" height="170" key="GridCell.Tab.0.right/0.23.1366.680@0.23.1366.680" timestamp="1584032971835" />
     <state width="1324" height="170" key="GridCell.Tab.0.right/0.23.1366.682@0.23.1366.682" timestamp="1583180751015" />
     <state width="1324" height="170" key="GridCell.Tab.0.right/0.23.1366.684@0.23.1366.684" timestamp="1582866159549" />
     <state width="1324" height="170" key="GridCell.Tab.0.right/0.23.1366.689@0.23.1366.689" timestamp="1582643197037" />
+    <state x="192" y="23" key="SettingsEditor" timestamp="1583639435641">
+      <screen x="0" y="23" width="1366" height="680" />
+    </state>
+    <state x="192" y="23" key="SettingsEditor/0.23.1366.680@0.23.1366.680" timestamp="1583639435641" />
     <state x="275" y="91" width="816" height="550" key="find.popup" timestamp="1583093683655">
       <screen x="0" y="23" width="1366" height="682" />
     </state>
     <state x="275" y="91" width="816" height="550" key="find.popup/0.23.1366.682@0.23.1366.682" timestamp="1583093683655" />
-    <state x="82" y="23" key="new project wizard" timestamp="1582920018848">
-      <screen x="0" y="23" width="1366" height="684" />
+    <state x="82" y="23" key="new project wizard" timestamp="1583549755550">
+      <screen x="0" y="23" width="1366" height="680" />
     </state>
+    <state x="82" y="23" key="new project wizard/0.23.1366.680@0.23.1366.680" timestamp="1583549755550" />
     <state x="82" y="23" key="new project wizard/0.23.1366.684@0.23.1366.684" timestamp="1582920018848" />
   </component>
 </project>
