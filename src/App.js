@@ -7,6 +7,7 @@ function App() {
         <div id="Maze">
             <Maze/>
         </div>
+
     )
 
 }
