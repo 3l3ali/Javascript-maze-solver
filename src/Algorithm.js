@@ -28,17 +28,25 @@ export class Algorithm{
     }
 
     async bfs () {
+        //To implement, different color for tree level
         //var colors = ['orange', 'pink', 'lightblue', 'purple', 'brown'];
         this.pen.fillStyle = 'lightblue';
         let size = this.size;
+        this.parent =  new Map();
         let i = 0;
         while (this.que.length > 0) {
+            //To implement, different color for each tree level
             //this.pen.fillStyle = colors[i%5];
             let firstElement =  this.que.shift();
 
-            if (firstElement[0]=== 1 && firstElement[1]===12)
-                console.log(firstElement);
+            //Check if we found the end point
+            if (firstElement[0] === this.endPoint[0] && firstElement[1 ]=== this.endPoint[1]) {
+                console.log("found");
+                this.back_track(firstElement);
+                break;
+            }
 
+            //For optimization
             if(this.is_visited.get(firstElement[0] + " " + firstElement[1]))
                 continue;
 
@@ -46,26 +54,33 @@ export class Algorithm{
             if (i == 3000)
                 break;
 
+            //To give an animation effect and see the traversal
             await this.delay(0.4);
             i = i + 1;
             this.is_visited.set(firstElement[0] + " " + firstElement[1], true);
 
+            //So we don't over draw the startpoint
             if (firstElement[0] != this.startPoint[0] || firstElement[1] != this.startPoint[1]) {
                 this.pen.fillStyle = 'lightblue';
+                //We use begin Path for optimization
+                //If we keep drawing on the canvas without clearing the path
+                //It will slow down with every frame
                 this.pen.beginPath();
                 this.pen.fillRect(firstElement[0] * size, firstElement[1] * size, size, size);
             }
 
-            let traverse = this.all_directions();
-            traverse.forEach(direction => {
+            //We are searching up right down left
+            this.all_directions().forEach(direction => {
                 var new_coordinate = this.new_coordinate(firstElement, direction);
-                if(new_coordinate !== '-1')
+                if(new_coordinate !== '-1') {
                     this.que.push(new_coordinate);
+                    this.parent.set(new_coordinate[0] + " " + new_coordinate[1], firstElement);
+                }
             });
         }
     }
 
-    new_coordinate (a, b) {
+    new_coordinate =  (function(a, b) {
         let maxHeight = this.maxHeight;
         let maxWidth =  this.maxWidth;
         var newx =  a[0] + b[0];
@@ -80,12 +95,25 @@ export class Algorithm{
         if (this.is_visited.get(newx + " " + newy) || this.is_wall.get(newx + " " + newy)) {
             return '-1';
         }
-        //console.log(newx+"   "+ newy);
+        console.log(newx+"   "+ newy);
         return new_cordinate;
-    };
+    });
 
     all_directions = (function (){
         return [this.up, this.right, this.down, this.left];
     });
+
+    async back_track (parent) {
+        if (parent == undefined)
+            return;
+        this.pen.fillStyle = 'darkblue';
+        this.pen.beginPath();
+        await this.delay(10);
+        if(parent[0] !== this.startPoint[0] || parent[1] !== this.startPoint[1])
+            if(parent[0] !== this.endPoint[0] || parent[1] !== this.endPoint[1])
+                this.pen.fillRect(parent[0] * this.size, parent[1] * this.size, this.size, this.size);
+        this.back_track(this.parent.get(parent[0] + " " + parent[1]));
+    };
+
 
 }

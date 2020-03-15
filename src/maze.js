@@ -18,10 +18,11 @@ class Maze extends React.Component {
 
         this.pen.fillStyle = 'lightgreen';
         let startPoint = [10,10];
-        let endPoint = null;
+        let endPoint = [40,10];
         //start Point
         this.pen.fillRect(startPoint[0]* this.size, startPoint[1] * this.size, this.size, this.size);
-
+        this.pen.fillStyle = 'red';
+        this.pen.fillRect(endPoint[0]* this.size, endPoint[1] * this.size, this.size, this.size);
         let bfs = new Algorithm(startPoint, endPoint, this.is_wall, 25, 65, this.size, this.pen);
         bfs.bfs();
     }

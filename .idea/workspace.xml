@@ -4,7 +4,6 @@
     <list default="true" id="f2163656-1989-449b-9a58-225a919b71e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Algorithm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maze.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/maze.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +76,7 @@
       <workItem from="1582065967643" duration="17845000" />
       <workItem from="1583029905177" duration="2495000" />
       <workItem from="1583094179043" duration="9196000" />
-      <workItem from="1583178563912" duration="47598000" />
+      <workItem from="1583178563912" duration="49808000" />
     </task>
     <task id="LOCAL-00001" summary="Added maze generator with simple bfs algorithm">
       <created>1583543226177</created>
