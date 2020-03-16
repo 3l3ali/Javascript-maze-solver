@@ -41,8 +41,7 @@ export class Algorithm{
 
             //Check if we found the end point
             if (firstElement[0] === this.endPoint[0] && firstElement[1 ]=== this.endPoint[1]) {
-                console.log("found");
-                this.back_track(firstElement);
+                this.back_track(firstElement, 0);
                 break;
             }
 
@@ -99,20 +98,22 @@ export class Algorithm{
         return new_cordinate;
     });
 
+    //TO DO
+    //Add horizontal directions
     all_directions = (function (){
         return [this.up, this.right, this.down, this.left];
     });
 
-    async back_track (parent) {
+    async back_track (parent, moves) {
         if (parent == undefined)
-            return;
-        this.pen.fillStyle = 'darkblue';
+            return moves;
+        this.pen.fillStyle = 'orange';
         this.pen.beginPath();
-        await this.delay(10);
+        await this.delay(5);
         if(parent[0] !== this.startPoint[0] || parent[1] !== this.startPoint[1])
             if(parent[0] !== this.endPoint[0] || parent[1] !== this.endPoint[1])
                 this.pen.fillRect(parent[0] * this.size, parent[1] * this.size, this.size, this.size);
-        this.back_track(this.parent.get(parent[0] + " " + parent[1]));
+        this.back_track(this.parent.get(parent[0] + " " + parent[1]), moves + 1);
     };
 
 
