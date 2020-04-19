@@ -15,6 +15,10 @@ export class Algorithm{
     right = [1, 0];
     down = [0, -1];
     up = [0, 1];
+    leftUp = [-1, -1]
+    leftDown = [-1, 1]
+    rightUp = [1, -1]
+    rightDown = [1, 1]
 
     constructor(startPoint, endPoint, is_wall, maxHeight, maxWidth, size, pen) {
         this.startPoint = startPoint;
@@ -54,7 +58,7 @@ export class Algorithm{
                 break;
 
             //To give an animation effect and see the traversal
-            await this.delay(0.4);
+            await this.delay(0.1);
             i = i + 1;
             this.is_visited.set(firstElement[0] + " " + firstElement[1], true);
 
@@ -109,12 +113,55 @@ export class Algorithm{
             return moves;
         this.pen.fillStyle = 'orange';
         this.pen.beginPath();
-        await this.delay(5);
+        await this.delay(2);
         if(parent[0] !== this.startPoint[0] || parent[1] !== this.startPoint[1])
             if(parent[0] !== this.endPoint[0] || parent[1] !== this.endPoint[1])
                 this.pen.fillRect(parent[0] * this.size, parent[1] * this.size, this.size, this.size);
         this.back_track(this.parent.get(parent[0] + " " + parent[1]), moves + 1);
     };
+    async dfs(){
+        this.pen.fillStyle = 'lightblue';
+        this.parent =  new Map();
+        this.dfsAlgorithm();
+    }
+    async dfsAlgorithm(){
+        let stack = []
+        stack.push(this.startPoint);
+        while (stack.length > 0) {
+            let element = stack.pop();
+            let size = this.size;
+            if (element[0] === this.endPoint[0] && element[1] === this.endPoint[1]) {
+                this.back_track(element, 0);
+                return;
+            }
+            //For optimization
+            if (this.is_visited.get(element[0] + " " + element[1]))
+                return;
+
+            //To give an animation effect and see the traversal
+            await this.delay(0.4);
+            this.is_visited.set(element[0] + " " + element[1], true);
+            //So we don't over draw the startpoint
+            if (element[0] != this.startPoint[0] || element[1] != this.startPoint[1]) {
+                let colors = ['lightblue', 'black', 'blue'];
+                this.pen.fillStyle = colors[Math.random() * 3];
+                //We use begin Path for optimization
+                //If we keep drawing on the canvas without clearing the path
+                //It will slow down with every frame
+                this.pen.beginPath();
+                this.pen.fillRect(element[0] * size, element[1] * size, size, size);
+            }
+
+            //We are searching up right down left
+            this.all_directions().forEach(direction => {
+                let new_coordinate = this.new_coordinate(element, direction);
+                if (new_coordinate !== '-1') {
+                    stack.push(new_coordinate)
+                    this.parent.set(new_coordinate[0] + " " + new_coordinate[1], element);
+                }
+            });
+        }
+    }
 
 
 }

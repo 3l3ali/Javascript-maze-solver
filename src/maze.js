@@ -11,6 +11,7 @@ class Maze extends React.Component {
     pen = null;
     startPoint = [];
     endPoint = [];
+    algo = null
 
     componentDidMount() {
         this.updateCanvas();
@@ -32,6 +33,7 @@ class Maze extends React.Component {
 
         //We are binding this so it can see the class variables
         this.refs.BFS.addEventListener("click", this.startBFS.bind(this));
+        this.refs.DFS.addEventListener("click", this.startDFS.bind(this));
         this.refs.generateMaze.addEventListener("click", this.drawMaze.bind(this));
     }
 
@@ -42,6 +44,7 @@ class Maze extends React.Component {
             <>
                 <Navbar bg={"dark"} variant={"dark"}>
                     <Button variant="primary" ref="BFS" style={{width: "150px"}}> Solve BFS </Button>
+                    <Button variant="primary" ref="DFS" style={{width: "150px"}}> Solve DFS </Button>
                     <Button ref="generateMaze" style={{marginLeft: "20px", width: "150px"}} variant="primary">Generate
                         Maze</Button>
                     <Button style={{marginLeft: "700px", width: "150px"}} variant="primary">Draw</Button>
@@ -113,8 +116,12 @@ class Maze extends React.Component {
     }
 
     async startBFS() {
-        let bfs = new Algorithm(this.startPoint, this.endPoint, this.is_wall, 25, 65, this.size, this.pen);
-        bfs.bfs();
+        this.algo = new Algorithm(this.startPoint, this.endPoint, this.is_wall, 25, 65, this.size, this.pen);
+        this.algo.bfs();
+    }
+    async startDFS() {
+        this.algo = new Algorithm(this.startPoint, this.endPoint, this.is_wall, 25, 65, this.size, this.pen);
+        this.algo.dfs();
     }
 }
 export default Maze;
