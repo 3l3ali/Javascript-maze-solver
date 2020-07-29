@@ -6,10 +6,20 @@ class Home extends React.Component {
 
     render() {
         return(
-            <>
-                <h1>Maze Solver</h1>
-                <Link to={'/maze'}>Start</Link> 
-            </>
+            <div id="banner" className="pickgradient">
+                <div className="container">
+                    <div className="row text-center">
+                        <div className="col-12">
+                            <h1>The Maze Solver</h1>
+                        </div>
+                        <div className="col-12 text-center">
+                            <Link to={'/maze'}>
+                                <div id="start"></div>
+                            </Link> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

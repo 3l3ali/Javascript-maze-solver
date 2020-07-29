@@ -2,7 +2,7 @@ import React from "react";
 import {Algorithm} from "./Algorithm";
 import {Button, Navbar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styled, { css } from 'styled-components'
+
 class Maze extends React.Component {
     is_wall = new Map();
     delay = require("delay");
