@@ -1,6 +1,7 @@
 import React from "react";
 import {Algorithm} from "./Algorithm";
-import {Button, Navbar} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
+import '../css/mazepage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Maze extends React.Component {
@@ -38,33 +39,29 @@ class Maze extends React.Component {
     }
 
     render() {
-        // Styles are inline
-        //TO DO, put them in a css file and use selectors instead
         return (
-            <>
-                <Navbar bg={"dark"} variant={"dark"}>
-                    <Button variant="primary" ref="BFS" style={{width: "150px"}}> Solve BFS </Button>
-                    <Button variant="primary" ref="DFS" style={{width: "150px"}}> Solve DFS </Button>
-                    <Button ref="generateMaze" style={{marginLeft: "20px", width: "150px"}} variant="primary">Generate
-                        Maze</Button>
-                    <Button style={{marginLeft: "700px", width: "150px"}} variant="primary">Draw</Button>
-                    <Button style={{marginLeft: "20px", width: "150px"}} variant="primary">Clear</Button>
-                </Navbar>
-                <div
-                    style={{
-                        marginTop: "5px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                >
+            <div id="mazepage">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="maze-navbar">
+                                <Button className="maze-link" ref="BFS"> Solve BFS </Button>
+                                <Button className="maze-link" ref="DFS"> Solve DFS </Button>
+                                <Button className="maze-link" ref="generateMaze">Generate Maze</Button>
+                                <Button className="maze-link" >Draw</Button>
+                                <Button className="maze-link" >Clear</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="maze-canvas">
                     <canvas ref="canvas" width={1300} height={500}/>
                 </div>
-                <Navbar bg={"dark"} variant={"dark"} style={{marginTop: "5px"}}>
+                <div className="moves-bar text-center">
                     <label style={{color: "white"}}>Moves: 0</label>
                     <label ref="optimalMoves" style={{color: "white"}}></label>
-                </Navbar>
-            </>
+                </div>
+            </div>
         );
     }
 
