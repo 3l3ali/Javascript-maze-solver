@@ -54,7 +54,7 @@ export class Algorithm{
                 continue;
 
             //for debugging
-            if (i == 3000)
+            if (i === 3000)
                 break;
 
             //To give an animation effect and see the traversal
@@ -63,7 +63,7 @@ export class Algorithm{
             this.is_visited.set(firstElement[0] + " " + firstElement[1], true);
 
             //So we don't over draw the startpoint
-            if (firstElement[0] != this.startPoint[0] || firstElement[1] != this.startPoint[1]) {
+            if (firstElement[0] !== this.startPoint[0] || firstElement[1] !== this.startPoint[1]) {
                 this.pen.fillStyle = 'lightblue';
                 //We use begin Path for optimization
                 //If we keep drawing on the canvas without clearing the path
@@ -109,7 +109,7 @@ export class Algorithm{
     });
 
     async back_track (parent, moves) {
-        if (parent == undefined)
+        if (parent === undefined)
             return moves;
         this.pen.fillStyle = 'orange';
         this.pen.beginPath();
@@ -142,7 +142,7 @@ export class Algorithm{
             await this.delay(0.4);
             this.is_visited.set(element[0] + " " + element[1], true);
             //So we don't over draw the startpoint
-            if (element[0] != this.startPoint[0] || element[1] != this.startPoint[1]) {
+            if (element[0] !== this.startPoint[0] || element[1] !== this.startPoint[1]) {
                 let colors = ['lightblue', 'black', 'blue'];
                 this.pen.fillStyle = colors[Math.random() * 3];
                 //We use begin Path for optimization
